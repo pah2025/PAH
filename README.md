@@ -63,7 +63,7 @@ It's recommended to use a virtual environment to manage dependencies.
 
 ```
 # Using venv
-python3 -m venv env
+python -m venv env
 source env/bin/activate  # On Windows: env\Scripts\activate
 
 # OR using conda
