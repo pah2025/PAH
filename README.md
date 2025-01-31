@@ -1,4 +1,4 @@
-# Prototype-Augmented Hypernetworks for Scalable Continual Multitask Learning
+# Prototype-Augmented Hypernetworks for Continual Multitask Learning
 
 ![PAH_scheme](https://github.com/user-attachments/assets/fafbe56a-a5c4-472d-8fcb-c45fd522ee78)
 
