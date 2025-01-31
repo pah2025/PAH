@@ -27,7 +27,6 @@ and minimal forgetting._
 - [Introduction](#introduction)
 - [Features](#features)
 - [Installation](#installation)
-  - [Prerequisites](#prerequisites)
   - [Clone the Repository](#clone-the-repository)
   - [Create a Virtual Environment](#create-a-virtual-environment)
   - [Install Dependencies](#install-dependencies)
@@ -50,15 +49,6 @@ and minimal forgetting._
 
 
 ## Installation
-
-### Prerequisites
-
-List the software and tools required to run your project. For example:
-
-- **Python 3.8+**
-- **Git**
-- **CUDA 11.0** _(if using GPU)_
-- *(Add any other prerequisites)*
 
 ### Clone the Repository
 
@@ -92,7 +82,7 @@ pip install -r requirements.txt
 
 ## Data
 
-Running the training script will automatically download and save the data from Split-MNIST and Split-CIFAR100 in a new folder called data. To download the TinyImageNet dataset 
+Running the training script will automatically download and save the data from Split-MNIST and Split-CIFAR100 in a new folder called data. The TinyImageNet dataset can be downloaded from the following website: https://paperswithcode.com/dataset/tiny-imagenet
 
 ## Usage
 
