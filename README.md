@@ -101,7 +101,18 @@ pip install -r requirements.txt
 
 ## Data
 
-Running the training script will automatically download and save the data in a new folder called data.
+Running the training script will automatically download and save the data from Split-MNIST and Split-CIFAR100 in a new folder called data. To download the TinyImageNet dataset 
 
+## Usage
+
+To run a training experiment the config/hyper2d.py must be modified to use the desired parameters and settings. Then run the following command to start training the model:
+
+```
+python train_hyper2d.py config/hyper2d.py
+```
+
+## Results
+
+The obtained results will be available in a folder called results and can also be seen in Weights & Biases if your credentials are given in the wandb init function.
 
 
