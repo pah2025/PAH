@@ -24,8 +24,6 @@ and minimal forgetting._
 
 ## Table of Contents
 
-- [Project Title](#project-title)
-- [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
 - [Features](#features)
 - [Installation](#installation)
@@ -34,29 +32,22 @@ and minimal forgetting._
   - [Create a Virtual Environment](#create-a-virtual-environment)
   - [Install Dependencies](#install-dependencies)
 - [Data](#data)
-  - [Downloading the Data](#downloading-the-data)
-  - [Data Preprocessing](#data-preprocessing)
 - [Usage](#usage)
-  - [Running Experiments](#running-experiments)
-  - [Training the Model](#training-the-model)
-  - [Evaluating the Model](#evaluating-the-model)
 - [Results](#results)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
+
 
 ---
 
 ## Introduction
 
-Provide a more detailed introduction to your project. Explain the problem it solves, the motivation behind it, and any relevant background information.
+**Prototype-Augmented Hypernetworks (PAH)** introduce a novel approach to mitigate forgetting by dynamically generating task-specific classifier weights using a **hypernetwork** conditioned on **learnable task prototypes**. These prototypes capture task-specific characteristics, allowing the model to adapt to new tasks while maintaining performance on past tasks.
 
-## Features
+## 🔹 Key Features
+- **Hypernetwork-based Classifier Adaptation**: Dynamically generates classifier heads conditioned on task-specific prototypes.
+- **Prototype Learning**: Learnable task embeddings align with evolving feature representations.
+- **Knowledge Distillation**: Preserves shared knowledge across tasks, reducing catastrophic forgetting.
+- **State-of-the-Art Performance**: Demonstrated on **Split-CIFAR100**, **TinyImageNet**, and **Split-MNIST**, outperforming existing continual learning baselines.
 
-- **Feature 1:** Description of feature 1.
-- **Feature 2:** Description of feature 2.
-- **Feature 3:** Description of feature 3.
-- *(Add more features as needed)*
 
 ## Installation
 
