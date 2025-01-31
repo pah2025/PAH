@@ -43,7 +43,6 @@ and minimal forgetting._
 - [Results](#results)
 - [Contributing](#contributing)
 - [License](#license)
-- [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
 
 ---
@@ -75,5 +74,34 @@ List the software and tools required to run your project. For example:
 ```bash
 git clone https://github.com/pah2025/PAH
 cd PAH
+```
+
+### Create Virtual Environment
+
+It's recommended to use a virtual environment to manage dependencies.
+
+```
+# Using venv
+python3 -m venv env
+source env/bin/activate  # On Windows: env\Scripts\activate
+
+# OR using conda
+conda create -n your-env-name python=3.8
+conda activate your-env-name
+```
+
+### Install Dependencies
+
+Install the required Python packages using pip.
+
+```
+# Using pip
+pip install -r requirements.txt
+```
+
+## Data
+
+
+
 
 
