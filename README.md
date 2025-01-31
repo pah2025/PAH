@@ -7,7 +7,7 @@ without forgetting prior knowledge, but catas-
 trophic forgetting—primarily concentrated in the
 final classification layers—remains a challenge.
 We propose Prototype-Augmented Hypernetworks
-(P AH), a framework that uses hypernetworks
+(PAH), a framework that uses hypernetworks
 conditioned on learnable task prototypes to dy-
 namically generate task-specific classifier heads.
 By aligning these heads with evolving represen-
@@ -101,7 +101,7 @@ pip install -r requirements.txt
 
 ## Data
 
-
+Running the training script will automatically download and save the data in a new folder called data.
 
 
 
