@@ -218,45 +218,6 @@ class AlexNet(nn.Module):
         # Add a lower learning rate for the pretrained parameters
         return [{'params': self.feature_extractor.parameters(), 'lr': 1e-4}]
 
-class ViT(nn.Module):
-    def __init__(self, pretrained=True, device="cuda"):
-        super().__init__()
-
-        # Load pretrained Vision Transformer
-        vit = create_model('vit_base_patch16_224', pretrained=pretrained)
-        #print(vit)
-        # Remove the fully connected layer and retain only the transformer backbone
-        self.feature_extractor = vit.forward_features
-        
-        # Add adaptive average pooling to reduce feature maps to 1x1
-        self.pool = nn.AdaptiveAvgPool2d((1, 1))
-        
-        # Set the number of output features (768 for ViT base model)
-        self.num_features = vit.head.in_features
-        #print(self.num_features)
-
-        # Store the device and move the model to the correct device
-        self.device = device
-        self.to(device)  # Make sure the model is on the correct device
-
-    def forward(self, x):
-        # Ensure the input is on the correct device (same as the model)
-        x = x.to(self.device)  # Ensure the input is on the same device as the model
-
-        # Pass through ViT backbone
-        x = self.feature_extractor(x)
-        
-        # Global average pooling to get feature vector
-        x = self.pool(x)
-        x = x.view(x.size(0), -1)
-
-        return x
-    
-    def get_optimizer_list(self):
-        # Add a lower learning rate for the pretrained parameters
-        return [{'params': self.feature_extractor.parameters(), 'lr': 1e-4}]
-
-
 
 
 # Function to initialize the backbone
@@ -273,9 +234,6 @@ def get_backbone(name, pretrained=True, device="cuda"):
     elif name == "efficientnetb0":
         print("EfficientNetB0", EfficientNetB0(pretrained, device))
         return EfficientNetB0(pretrained, device)
-    elif name == "vit":
-        print("ViT", ViT(pretrained, device))
-        return ViT(pretrained, device)
     elif name == "alexnet":
         print("AlexNet", AlexNet(pretrained, device))
         return AlexNet(pretrained, device)
