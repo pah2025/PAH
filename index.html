@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prototype-Augmented Hypernetworks (PAH)</title>
+    <title>Prototype-Augmented Hypernetworks for Continual Multitask Learning (PAH)</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,7 +13,7 @@
             line-height: 1.6;
             color: #333;
         }
-        h1, h2 {
+        h1, h2, h3 {
             color: #0056b3;
         }
         pre {
@@ -24,39 +24,60 @@
         code {
             font-family: monospace;
         }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
 
-<h1>Prototype-Augmented Hypernetworks (PAH)</h1>
+<h1>Prototype-Augmented Hypernetworks for Continual Multitask Learning (PAH)</h1>
+
+<img src="https://github.com/user-attachments/assets/fafbe56a-a5c4-472d-8fcb-c45fd522ee78" alt="PAH scheme">
 
 <h2>Abstract</h2>
 <p>
-    Continual learning aims to learn sequential tasks without forgetting prior knowledge, but catastrophic forgetting—primarily concentrated in the final classification layers—remains a challenge. We propose <strong>Prototype-Augmented Hypernetworks (PAH)</strong>, a framework that uses hypernetworks conditioned on learnable task prototypes to dynamically generate task-specific classifier heads. By aligning these heads with evolving representations and preserving shared knowledge through distillation, PAH effectively mitigates catastrophic forgetting. Extensive evaluations on Split-CIFAR100 and TinyImageNet demonstrate state-of-the-art performance, achieving robust accuracy and minimal forgetting.
+Continual learning aims to learn sequential tasks without forgetting prior knowledge, but catastrophic forgetting—primarily concentrated in the final classification layers—remains a challenge. We propose <strong>Prototype-Augmented Hypernetworks (PAH)</strong>, a framework that uses hypernetworks conditioned on learnable task prototypes to dynamically generate task-specific classifier heads. By aligning these heads with evolving representations and preserving shared knowledge through distillation, PAH effectively mitigates catastrophic forgetting. Extensive evaluations on Split-CIFAR100 and TinyImageNet demonstrate state-of-the-art performance, achieving robust accuracy and minimal forgetting.
 </p>
 
-<h2>Features</h2>
+<h2>Key Features</h2>
 <ul>
-    <li><strong>Dynamic Classifier Generation:</strong> Uses hypernetworks conditioned on task prototypes to generate task-specific classifier heads.</li>
-    <li><strong>Knowledge Distillation:</strong> Preserves shared knowledge across tasks to reduce forgetting.</li>
-    <li><strong>State-of-the-Art Performance:</strong> Achieves robust accuracy and minimal forgetting on benchmarks like Split-CIFAR100 and TinyImageNet.</li>
+    <li><strong>Hypernetwork-based Classifier Adaptation:</strong> Dynamically generates classifier heads conditioned on task-specific prototypes.</li>
+    <li><strong>Prototype Learning:</strong> Learnable task embeddings align with evolving feature representations.</li>
+    <li><strong>Knowledge Distillation:</strong> Preserves shared knowledge across tasks, reducing catastrophic forgetting.</li>
+    <li><strong>State-of-the-Art Performance:</strong> Demonstrated on <strong>Split-CIFAR100</strong>, <strong>TinyImageNet</strong>, and <strong>Split-MNIST</strong>, outperforming existing continual learning baselines.</li>
 </ul>
 
-<h2>How It Works</h2>
+<h2>Installation</h2>
+<h3>Clone the Repository</h3>
+<pre><code>git clone https://github.com/pah2025/PAH.git
+cd PAH</code></pre>
+
+<h3>Create Virtual Environment</h3>
+<pre><code># Using venv
+python -m venv env
+source env/bin/activate  # On Windows: env\Scripts\activate
+
+# OR using conda
+conda create -n your-env-name python=3.8
+conda activate your-env-name</code></pre>
+
+<h3>Install Dependencies</h3>
+<pre><code>pip install -r requirements.txt</code></pre>
+
+<h2>Data</h2>
 <p>
-    PAH employs a hypernetwork that takes task-specific prototypes as input to generate classifier heads dynamically. This approach allows the model to adapt to new tasks while retaining knowledge from previous ones. Knowledge distillation techniques are used to ensure that shared representations are preserved across tasks.
+Running the training script automatically downloads and saves Split-MNIST and Split-CIFAR100 data in a new folder called <code>data</code>. The TinyImageNet dataset can be downloaded from: <a href="https://paperswithcode.com/dataset/tiny-imagenet">TinyImageNet</a>.
 </p>
 
-<h2>Installation</h2>
-<pre><code>git clone https://github.com/pah2025/PAH.git
-cd PAH
-pip install -r requirements.txt</code></pre>
-
 <h2>Usage</h2>
-<p>To train the model on a dataset:</p>
-<pre><code>python train_hyper2d.py --dataset &lt;dataset_name&gt; --epochs &lt;num_epochs&gt;</code></pre>
+<p>Modify <code>config/hyper2d.py</code> with desired parameters and settings, then run:</p>
+<pre><code>python train_hyper2d.py config/hyper2d.py</code></pre>
+
+<h2>Results</h2>
 <p>
-Replace <code>&lt;dataset_name&gt;</code> with the name of the dataset (e.g., <code>Split-CIFAR100</code>) and <code>&lt;num_epochs&gt;</code> with the number of training epochs.
+Results are stored in a folder called <code>results</code> and can also be viewed in Weights & Biases if configured.
 </p>
 
 <h2>License</h2>
