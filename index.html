@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype-Augmented Hypernetworks (PAH)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Prototype-Augmented Hypernetworks (PAH)</h1>
+
+<h2>Abstract</h2>
+<p>
+    Continual learning aims to learn sequential tasks without forgetting prior knowledge, but catastrophic forgetting—primarily concentrated in the final classification layers—remains a challenge. We propose <strong>Prototype-Augmented Hypernetworks (PAH)</strong>, a framework that uses hypernetworks conditioned on learnable task prototypes to dynamically generate task-specific classifier heads. By aligning these heads with evolving representations and preserving shared knowledge through distillation, PAH effectively mitigates catastrophic forgetting. Extensive evaluations on Split-CIFAR100 and TinyImageNet demonstrate state-of-the-art performance, achieving robust accuracy and minimal forgetting.
+</p>
+
+<h2>Features</h2>
+<ul>
+    <li><strong>Dynamic Classifier Generation:</strong> Uses hypernetworks conditioned on task prototypes to generate task-specific classifier heads.</li>
+    <li><strong>Knowledge Distillation:</strong> Preserves shared knowledge across tasks to reduce forgetting.</li>
+    <li><strong>State-of-the-Art Performance:</strong> Achieves robust accuracy and minimal forgetting on benchmarks like Split-CIFAR100 and TinyImageNet.</li>
+</ul>
+
+<h2>How It Works</h2>
+<p>
+    PAH employs a hypernetwork that takes task-specific prototypes as input to generate classifier heads dynamically. This approach allows the model to adapt to new tasks while retaining knowledge from previous ones. Knowledge distillation techniques are used to ensure that shared representations are preserved across tasks.
+</p>
+
+<h2>Installation</h2>
+<pre><code>git clone https://github.com/pah2025/PAH.git
+cd PAH
+pip install -r requirements.txt</code></pre>
+
+<h2>Usage</h2>
+<p>To train the model on a dataset:</p>
+<pre><code>python train_hyper2d.py --dataset &lt;dataset_name&gt; --epochs &lt;num_epochs&gt;</code></pre>
+<p>
+Replace <code>&lt;dataset_name&gt;</code> with the name of the dataset (e.g., <code>Split-CIFAR100</code>) and <code>&lt;num_epochs&gt;</code> with the number of training epochs.
+</p>
+
+<h2>License</h2>
+<p>This project is licensed under the MIT License.</p>
+
+</body>
+</html>
