@@ -1,123 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Prototype-Augmented Hypernetworks</title>
-  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
-  <style>
-    body {
-      text-align: justify;
-      max-width: 960px;
-      margin: auto;
-      padding: 2rem;
-    }
-    h1, header p.authors, header p.institution, header p.conference {
-      text-align: center;
-    }
-    img.header-img {
-      display: block;
-      margin: 1.5rem auto;
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-    .badges {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .badges img {
-      margin-right: 8px;
-    }
-    section {
-      margin-top: 2.5rem;
-    }
-    pre {
-      background: #f4f4f4;
-      padding: 1rem;
-      border-radius: 5px;
-      overflow-x: auto;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PAH: Prototype-Augmented Hypernetworks</title>
+  <link rel="stylesheet" href="./static/css/bulma.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="stylesheet" href="./static/css/index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <meta name="description" content="Project page for 'Prototype-Augmented Hypernetworks for Continual Multitask Learning'" />
+  <link rel="icon" href="./static/images/icon.png" type="image/x-icon" />
 </head>
+
 <body>
-  <header>
-    <h1>Prototype-Augmented Hypernetworks (PAH)</h1>
-    <p class="authors"><strong>Authors:</strong> [Author Names Placeholder]</p>
-    <p class="institution"><strong>Institutions:</strong> [Institution 1], [Institution 2], ...</p>
-    <p class="conference"><strong>Conference:</strong> [Conference Name Placeholder]</p>
-    <img class="header-img" src="https://github.com/user-attachments/assets/fafbe56a-a5c4-472d-8fcb-c45fd522ee78" alt="PAH Scheme">
-    <p>
-      Continual learning aims to learn sequential tasks without forgetting prior knowledge,
-      but catastrophic forgetting—primarily concentrated in the final classification layers—remains a challenge.
-      We propose <strong>Prototype-Augmented Hypernetworks (PAH)</strong>, a framework that uses hypernetworks
-      conditioned on learnable task prototypes to dynamically generate task-specific classifier heads.
-      By aligning these heads with evolving representations and preserving shared knowledge through distillation,
-      PAH effectively mitigates catastrophic forgetting. Extensive evaluations on Split-CIFAR100 and TinyImageNet
-      demonstrate state-of-the-art performance, achieving robust accuracy and minimal forgetting.
-    </p>
-    <div class="badges">
-      <img src="https://img.shields.io/badge/build-passing-brightgreen" alt="Build Status">
-      <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
-      <img src="https://img.shields.io/badge/python-3.8%2B-blue.svg" alt="Python">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <img src="./static/images/pah_logo.png" alt="PAH Logo" style="width: 450px; height: auto; margin-top: 20px;">
+        <h3 class="title is-3 publication-title">Prototype-Augmented Hypernetworks for Continual Multitask Learning</h3>
+
+        <div class="is-size-5 publication-authors">
+          <div class="author-block">[Author 1 Placeholder]</div>
+          <div class="author-block">[Author 2 Placeholder]</div>
+          <div class="author-block">[Author 3 Placeholder]</div>
+        </div>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block"><sup>1</sup>Institution 1</span>
+          <span class="author-block"><sup>2</sup>Institution 2</span>
+          <span class="author-block"><strong>Conference:</strong> [Conference Placeholder]</span>
+        </div>
+
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/XXXX.XXXXX" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="ai ai-arxiv"></i></span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/pah2025/PAH" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section>
-      <h2>Key Features</h2>
-      <ul>
-        <li>Hypernetwork-based Classifier Adaptation</li>
-        <li>Prototype Learning with evolving feature alignment</li>
-        <li>Knowledge Distillation to reduce forgetting</li>
-        <li>State-of-the-Art on Split-CIFAR100, TinyImageNet, Split-MNIST</li>
-      </ul>
-    </section>
+  <div class="container">
+    <p style="padding-top: 30px; padding-bottom:15px; text-align: left;"><strong>Abstract</strong></p>
+    <p>
+      Continual learning aims to learn sequential tasks without forgetting prior knowledge, but catastrophic forgetting—primarily concentrated in the final classification layers—remains a challenge.
+      We propose Prototype-Augmented Hypernetworks (PAH), a framework that uses hypernetworks conditioned on learnable task prototypes to dynamically generate task-specific classifier heads.
+      By aligning these heads with evolving representations and preserving shared knowledge through distillation, PAH effectively mitigates catastrophic forgetting.
+      Extensive evaluations on Split-CIFAR100 and TinyImageNet demonstrate state-of-the-art performance, achieving robust accuracy and minimal forgetting.
+    </p>
 
-    <section>
-      <h2>Installation</h2>
-      <pre><code>git clone https://github.com/pah2025/PAH
-cd PAH</code></pre>
-      <p><strong>Virtual Environment:</strong></p>
-      <pre><code># venv
+    <p style="padding-top: 30px;"><strong>Model Architecture</strong></p>
+    <img src="./static/images/pah_scheme.png" alt="PAH Architecture" style="width: 80%; display: block; margin: 20px auto;">
+
+    <p style="padding-top: 30px;"><strong>Installation</strong></p>
+    <pre><code>git clone https://github.com/pah2025/PAH
+cd PAH
 python -m venv env
-source env/bin/activate  # On Windows: env\\Scripts\\activate
+source env/bin/activate  # Or env\\Scripts\\activate on Windows
+pip install -r requirements.txt
+</code></pre>
 
-# OR using conda
-conda create -n your-env-name python=3.8
-conda activate your-env-name</code></pre>
-      <p><strong>Install Dependencies:</strong></p>
-      <pre><code>pip install -r requirements.txt</code></pre>
-    </section>
+    <p style="padding-top: 30px;"><strong>Usage</strong></p>
+    <p>Modify <code>config/hyper2d.py</code> with your desired parameters and then run:</p>
+    <pre><code>python train_hyper2d.py config/hyper2d.py</code></pre>
 
-    <section>
-      <h2>Data</h2>
-      <p>
-        The training script will download Split-MNIST and Split-CIFAR100 into <code>data/</code>. 
-        For TinyImageNet, download it from 
-        <a href="https://paperswithcode.com/dataset/tiny-imagenet" target="_blank">this link</a>.
-      </p>
-    </section>
+    <p style="padding-top: 30px;"><strong>Data</strong></p>
+    <p>
+      The script will download and save Split-MNIST and Split-CIFAR100 in the <code>data/</code> folder.
+      You can download TinyImageNet from <a href="https://paperswithcode.com/dataset/tiny-imagenet" target="_blank">here</a>.
+    </p>
 
-    <section>
-      <h2>Usage</h2>
-      <p>Update <code>config/hyper2d.py</code> to your desired settings, then run:</p>
-      <pre><code>python train_hyper2d.py config/hyper2d.py</code></pre>
-    </section>
+    <p style="padding-top: 30px;"><strong>Results</strong></p>
+    <p>Training results are saved in the <code>results/</code> directory and optionally visualized with Weights & Biases.</p>
 
-    <section>
-      <h2>Results</h2>
-      <p>Results are saved to the <code>results/</code> folder and can be tracked with Weights & Biases if configured.</p>
-    </section>
-
-    <section>
-      <h2>Paper</h2>
-      <p>[Link to paper placeholder]</p>
-    </section>
-
-    <section>
-      <h2>Contact</h2>
-      <p>For any questions, contact [Author contact placeholder]</p>
-    </section>
-  </main>
+    <hr style="margin: 40px 0;">
+    <footer style="font-size: 12px; text-align: center;">
+      Template inspired by <a href="https://hypernvd.github.io" target="_blank">HyperNVD</a>
+    </footer>
+  </div>
 </body>
 </html>
