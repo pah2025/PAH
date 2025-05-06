@@ -5,29 +5,46 @@
   <title>Prototype-Augmented Hypernetworks</title>
   <link rel="stylesheet" href="https://unpkg.com/mvp.css">
   <style>
-    img.header-img {{
+    body {
+      text-align: justify;
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem;
+    }
+    h1, header p.authors, header p.institution, header p.conference {
+      text-align: center;
+    }
+    img.header-img {
+      display: block;
+      margin: 1.5rem auto;
       max-width: 100%;
-      margin-top: 1rem;
+      height: auto;
       border-radius: 8px;
-    }}
-    .badges img {{
+    }
+    .badges {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .badges img {
       margin-right: 8px;
-    }}
-    .section {{
-      margin-top: 2rem;
-    }}
-    pre {{
+    }
+    section {
+      margin-top: 2.5rem;
+    }
+    pre {
       background: #f4f4f4;
       padding: 1rem;
       border-radius: 5px;
       overflow-x: auto;
-    }}
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Prototype-Augmented Hypernetworks (PAH)</h1>
-    <p><strong>Authors:</strong> [Author Names Placeholder]</p>
+    <p class="authors"><strong>Authors:</strong> [Author Names Placeholder]</p>
+    <p class="institution"><strong>Institutions:</strong> [Institution 1], [Institution 2], ...</p>
+    <p class="conference"><strong>Conference:</strong> [Conference Name Placeholder]</p>
     <img class="header-img" src="https://github.com/user-attachments/assets/fafbe56a-a5c4-472d-8fcb-c45fd522ee78" alt="PAH Scheme">
     <p>
       Continual learning aims to learn sequential tasks without forgetting prior knowledge,
@@ -46,7 +63,7 @@
   </header>
 
   <main>
-    <section class="section">
+    <section>
       <h2>Key Features</h2>
       <ul>
         <li>Hypernetwork-based Classifier Adaptation</li>
@@ -56,7 +73,7 @@
       </ul>
     </section>
 
-    <section class="section">
+    <section>
       <h2>Installation</h2>
       <pre><code>git clone https://github.com/pah2025/PAH
 cd PAH</code></pre>
@@ -72,7 +89,7 @@ conda activate your-env-name</code></pre>
       <pre><code>pip install -r requirements.txt</code></pre>
     </section>
 
-    <section class="section">
+    <section>
       <h2>Data</h2>
       <p>
         The training script will download Split-MNIST and Split-CIFAR100 into <code>data/</code>. 
@@ -81,23 +98,23 @@ conda activate your-env-name</code></pre>
       </p>
     </section>
 
-    <section class="section">
+    <section>
       <h2>Usage</h2>
       <p>Update <code>config/hyper2d.py</code> to your desired settings, then run:</p>
       <pre><code>python train_hyper2d.py config/hyper2d.py</code></pre>
     </section>
 
-    <section class="section">
+    <section>
       <h2>Results</h2>
       <p>Results are saved to the <code>results/</code> folder and can be tracked with Weights & Biases if configured.</p>
     </section>
 
-    <section class="section">
+    <section>
       <h2>Paper</h2>
       <p>[Link to paper placeholder]</p>
     </section>
 
-    <section class="section">
+    <section>
       <h2>Contact</h2>
       <p>For any questions, contact [Author contact placeholder]</p>
     </section>
