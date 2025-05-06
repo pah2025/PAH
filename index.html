@@ -1,85 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prototype-Augmented Hypernetworks for Continual Multitask Learning (PAH)</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0 auto;
-            max-width: 800px;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
-        }
-        h1, h2, h3 {
-            color: #0056b3;
-        }
-        pre {
-            background-color: #f4f4f4;
-            padding: 10px;
-            overflow-x: auto;
-        }
-        code {
-            font-family: monospace;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Prototype-Augmented Hypernetworks</title>
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+  <style>
+    img.header-img {{
+      max-width: 100%;
+      margin-top: 1rem;
+      border-radius: 8px;
+    }}
+    .badges img {{
+      margin-right: 8px;
+    }}
+    .section {{
+      margin-top: 2rem;
+    }}
+    pre {{
+      background: #f4f4f4;
+      padding: 1rem;
+      border-radius: 5px;
+      overflow-x: auto;
+    }}
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Prototype-Augmented Hypernetworks (PAH)</h1>
+    <p><strong>Authors:</strong> [Author Names Placeholder]</p>
+    <img class="header-img" src="https://github.com/user-attachments/assets/fafbe56a-a5c4-472d-8fcb-c45fd522ee78" alt="PAH Scheme">
+    <p>
+      Continual learning aims to learn sequential tasks without forgetting prior knowledge,
+      but catastrophic forgetting—primarily concentrated in the final classification layers—remains a challenge.
+      We propose <strong>Prototype-Augmented Hypernetworks (PAH)</strong>, a framework that uses hypernetworks
+      conditioned on learnable task prototypes to dynamically generate task-specific classifier heads.
+      By aligning these heads with evolving representations and preserving shared knowledge through distillation,
+      PAH effectively mitigates catastrophic forgetting. Extensive evaluations on Split-CIFAR100 and TinyImageNet
+      demonstrate state-of-the-art performance, achieving robust accuracy and minimal forgetting.
+    </p>
+    <div class="badges">
+      <img src="https://img.shields.io/badge/build-passing-brightgreen" alt="Build Status">
+      <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+      <img src="https://img.shields.io/badge/python-3.8%2B-blue.svg" alt="Python">
+    </div>
+  </header>
 
-<h1>Prototype-Augmented Hypernetworks for Continual Multitask Learning (PAH)</h1>
+  <main>
+    <section class="section">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Hypernetwork-based Classifier Adaptation</li>
+        <li>Prototype Learning with evolving feature alignment</li>
+        <li>Knowledge Distillation to reduce forgetting</li>
+        <li>State-of-the-Art on Split-CIFAR100, TinyImageNet, Split-MNIST</li>
+      </ul>
+    </section>
 
-<img src="https://github.com/user-attachments/assets/fafbe56a-a5c4-472d-8fcb-c45fd522ee78" alt="PAH scheme">
-
-<h2>Abstract</h2>
-<p>
-Continual learning aims to learn sequential tasks without forgetting prior knowledge, but catastrophic forgetting—primarily concentrated in the final classification layers—remains a challenge. We propose <strong>Prototype-Augmented Hypernetworks (PAH)</strong>, a framework that uses hypernetworks conditioned on learnable task prototypes to dynamically generate task-specific classifier heads. By aligning these heads with evolving representations and preserving shared knowledge through distillation, PAH effectively mitigates catastrophic forgetting. Extensive evaluations on Split-CIFAR100 and TinyImageNet demonstrate state-of-the-art performance, achieving robust accuracy and minimal forgetting.
-</p>
-
-<h2>Key Features</h2>
-<ul>
-    <li><strong>Hypernetwork-based Classifier Adaptation:</strong> Dynamically generates classifier heads conditioned on task-specific prototypes.</li>
-    <li><strong>Prototype Learning:</strong> Learnable task embeddings align with evolving feature representations.</li>
-    <li><strong>Knowledge Distillation:</strong> Preserves shared knowledge across tasks, reducing catastrophic forgetting.</li>
-    <li><strong>State-of-the-Art Performance:</strong> Demonstrated on <strong>Split-CIFAR100</strong>, <strong>TinyImageNet</strong>, and <strong>Split-MNIST</strong>, outperforming existing continual learning baselines.</li>
-</ul>
-
-<h2>Installation</h2>
-<h3>Clone the Repository</h3>
-<pre><code>git clone https://github.com/pah2025/PAH.git
+    <section class="section">
+      <h2>Installation</h2>
+      <pre><code>git clone https://github.com/pah2025/PAH
 cd PAH</code></pre>
-
-<h3>Create Virtual Environment</h3>
-<pre><code># Using venv
+      <p><strong>Virtual Environment:</strong></p>
+      <pre><code># venv
 python -m venv env
-source env/bin/activate  # On Windows: env\Scripts\activate
+source env/bin/activate  # On Windows: env\\Scripts\\activate
 
 # OR using conda
 conda create -n your-env-name python=3.8
 conda activate your-env-name</code></pre>
+      <p><strong>Install Dependencies:</strong></p>
+      <pre><code>pip install -r requirements.txt</code></pre>
+    </section>
 
-<h3>Install Dependencies</h3>
-<pre><code>pip install -r requirements.txt</code></pre>
+    <section class="section">
+      <h2>Data</h2>
+      <p>
+        The training script will download Split-MNIST and Split-CIFAR100 into <code>data/</code>. 
+        For TinyImageNet, download it from 
+        <a href="https://paperswithcode.com/dataset/tiny-imagenet" target="_blank">this link</a>.
+      </p>
+    </section>
 
-<h2>Data</h2>
-<p>
-Running the training script automatically downloads and saves Split-MNIST and Split-CIFAR100 data in a new folder called <code>data</code>. The TinyImageNet dataset can be downloaded from: <a href="https://paperswithcode.com/dataset/tiny-imagenet">TinyImageNet</a>.
-</p>
+    <section class="section">
+      <h2>Usage</h2>
+      <p>Update <code>config/hyper2d.py</code> to your desired settings, then run:</p>
+      <pre><code>python train_hyper2d.py config/hyper2d.py</code></pre>
+    </section>
 
-<h2>Usage</h2>
-<p>Modify <code>config/hyper2d.py</code> with desired parameters and settings, then run:</p>
-<pre><code>python train_hyper2d.py config/hyper2d.py</code></pre>
+    <section class="section">
+      <h2>Results</h2>
+      <p>Results are saved to the <code>results/</code> folder and can be tracked with Weights & Biases if configured.</p>
+    </section>
 
-<h2>Results</h2>
-<p>
-Results are stored in a folder called <code>results</code> and can also be viewed in Weights & Biases if configured.
-</p>
+    <section class="section">
+      <h2>Paper</h2>
+      <p>[Link to paper placeholder]</p>
+    </section>
 
-
+    <section class="section">
+      <h2>Contact</h2>
+      <p>For any questions, contact [Author contact placeholder]</p>
+    </section>
+  </main>
 </body>
 </html>
